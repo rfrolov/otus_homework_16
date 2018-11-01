@@ -1,0 +1,23 @@
+dist: trusty
+language: cpp
+addons:
+  apt:
+    sources:
+      - sourceline: "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-7
+      - g++-7
+      - libopenblas-dev
+      - libdlib-dev
+script:
+  - export CC=gcc-7
+  - export CXX=g++-7
+  - cmake .
+  - cmake --build .
+  - cmake --build . --target package
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script:
+    - curl -T realty-1.0.$TRAVIS_BUILD_NUMBER-Linux.deb -urfrolov:$BINTRAY_API_KEY "https://api.bintray.com/content/rfrolov/otus/otus_homework_16/$TRAVIS_BUILD_NUMBER/realty-1.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
