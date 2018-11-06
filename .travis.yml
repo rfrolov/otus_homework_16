@@ -9,11 +9,13 @@ addons:
       - gcc-7
       - g++-7
       - libopenblas-dev
-      - libdlib-dev
       - libboost-all-dev
 script:
   - export CC=gcc-7
   - export CXX=g++-7
+  - wget http://dlib.net/files/dlib-19.16.tar.bz2
+  - mkdir dlib
+  - tar xvf dlib-19.15.tar.bz2 -C dlib --strip-components=1
   - cmake .
   - cmake --build .
   - cmake --build . --target package
