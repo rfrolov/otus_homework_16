@@ -10,6 +10,7 @@ addons:
       - g++-7
       - libopenblas-dev
       - libdlib-dev
+      - libboost-all-dev
 script:
   - export CC=gcc-7
   - export CXX=g++-7

@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.6)
 
-project(realty VERSION 1.0.$ENV{TRAVIS_BUILD_NUMBER})
-
 if (NOT DEFINED ENV{TRAVIS_BUILD_NUMBER})
     set(ENV{TRAVIS_BUILD_NUMBER} 1)
 endif ()
+
+project(realty VERSION 1.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 add_subdirectory(rclss)
 add_subdirectory(rclst)

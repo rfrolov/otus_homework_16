@@ -13,6 +13,6 @@ set_target_properties(
         CXX_STANDARD_REQUIRED ON
 )
 
-#target_link_libraries(${target_name} openblas)
+target_link_libraries(${target_name} openblas dlib)
 
 install(TARGETS ${target_name} RUNTIME DESTINATION bin)
