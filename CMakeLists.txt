@@ -6,6 +6,7 @@ endif ()
 
 project(realty VERSION 1.0.$ENV{TRAVIS_BUILD_NUMBER})
 
+add_subdirectory(dlib EXCLUDE_FROM_ALL)
 add_subdirectory(rclss)
 add_subdirectory(rclst)
 
