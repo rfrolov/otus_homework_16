@@ -33,11 +33,11 @@ private:
     std::string m_model_file_name;
     size_t      m_clusters_num;
 
-    std::array<std::vector<double>, N>   m_raw_data;
-    std::array<std::vector<double>, N>   m_norm_data;
-    std::array<std::array<double, 2>, N> m_norm_cf;
+    std::array<std::vector<double>, N>   m_raw_data{};
+    std::array<std::vector<double>, N>   m_norm_data{};
+    std::array<std::array<double, 2>, N> m_norm_cf{};
 
-    std::vector<sample_type> m_samples;
-    std::vector<double>      m_labels;
+    std::vector<sample_type> m_samples{};
+    std::vector<double>      m_labels{};
 };
 

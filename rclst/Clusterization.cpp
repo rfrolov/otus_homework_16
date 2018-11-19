@@ -37,6 +37,10 @@ void Clusterization::parse_data() {
             m_raw_data[N - 1].back() = 1;
         }
     }
+
+    if(m_raw_data[0].empty()) {
+        throw std::logic_error{"Некорректные входные данные"};
+    }
 }
 
 void Clusterization::normalize_data() {

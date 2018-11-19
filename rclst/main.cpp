@@ -24,7 +24,11 @@ int main(int argc, char **argv) {
     std::string model_file_name = argv[2];
 
     Clusterization app(clusters_num, model_file_name);
-    app.execute();
+    try {
+        app.execute();
+    } catch (std::logic_error &e){
+        std::cerr << e.what() << std::endl;
+    }
 
     return 0;
 }
